@@ -1,205 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta name="description" content="Join our stock market learning community. Learn Nifty, BankNifty, trading basics, risk management and market concepts. Educational purpose only.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    /* Mobile Container styling specific for embedding */
-    .custom-container {
-        background-color: #ffffff;
-        width: 100%;
-        max-width: 450px;
-        margin: 0 auto;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
-        border: 1px solid #eee;
-        padding-bottom: 30px;
-    }
 
-    /* Top Blue Banner */
-    .top-banner {
-        background-color: #1976D2;
-        color: white;
-        padding: 15px 10px;
-    }
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
 
-    .top-banner h2 {
-        font-size: 18px;
-        font-weight: 700;
-        margin: 0 0 5px 0;
-        line-height: 1.2;
-    }
+.card{
+  width:100%;
+  max-width:380px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
 
-    .top-banner p {
-        font-size: 12px;
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+img{
+  width:85px;
+  height:85px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #22c55e;
+}
 
-    /* Profile Image */
-    .profile-section {
-        padding: 20px 0;
-    }
+h1{
+  font-size:20px;
+  margin:12px 0 6px;
+}
 
-    .profile-img {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #fff;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        background-color: #ddd; 
-    }
+.sub{
+  font-size:13px;
+  opacity:0.8;
+  margin-bottom:15px;
+}
 
-    /* Main Heading */
-    .main-heading {
-        color: #c0392b;
-        font-size: 24px;
-        font-weight: bold;
-        margin: 10px 0 20px 0;
-        text-transform: uppercase;
-        font-family: 'Georgia', serif;
-        line-height: 1.2;
-    }
+.btn{
+  display:block;
+  margin-top:15px;
+  padding:14px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#000;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:50px;
+  transition:0.3s;
+}
 
-    /* Features List */
-    .features-list {
-        list-style: none;
-        padding: 0 20px;
-        text-align: left;
-        margin-bottom: 25px;
-    }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    .features-list li {
-        margin-bottom: 15px;
-        font-size: 15px;
-        color: #333;
-        line-height: 1.4;
-        display: flex;
-        align-items: flex-start;
-    }
+.points{
+  text-align:left;
+  margin-top:15px;
+  font-size:13px;
+  line-height:1.7;
+  opacity:0.9;
+}
 
-    .check-icon {
-        margin-right: 10px;
-        font-size: 18px;
-    }
+.footer{
+  margin-top:15px;
+  font-size:10px;
+  opacity:0.6;
+  line-height:1.5;
+}
 
-    /* Loss Text */
-    .loss-text {
-        color: #333;
-        font-weight: 600;
-        font-size: 15px;
-        padding: 0 20px;
-        margin-bottom: 20px;
-    }
+.disclaimer{
+  margin-top:12px;
+  font-size:10px;
+  opacity:0.6;
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:10px;
+}
 
-    .highlight-green {
-        color: #27ae60;
-        font-weight: bold;
-    }
-
-    /* --- BUTTON STYLES WITH ANIMATION --- */
-    .btn-container {
-        padding: 0 20px;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* Animation Keyframes */
-    @keyframes pulse-blue {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(25, 118, 210, 0.7);
-        }
-        70% {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 15px rgba(25, 118, 210, 0);
-        }
-        100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(25, 118, 210, 0);
-        }
-    }
-
-    .custom-cta-button {
-        display: block;
-        width: 100%;
-        background-color: #1976D2;
-        color: white !important;
-        text-decoration: none;
-        padding: 15px;
-        border-radius: 5px;
-        font-weight: bold;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        /* Yahan Animation lagaya hai */
-        animation: pulse-blue 2s infinite; 
-    }
-
-    .custom-cta-button:hover {
-        background-color: #1565c0;
-        animation: none; /* Mouse le jaane par animation ruk jayega */
-        transform: scale(1.05); /* Thoda bada ho jayega */
-    }
-
-    .sub-text {
-        display: block;
-        font-size: 11px;
-        margin-top: 5px;
-        font-weight: normal;
-        opacity: 0.9;
-    }
-
-    /* Footer */
-    .footer-text {
-        margin-top: 25px;
-        color: #27ae60;
-        font-weight: bold;
-        font-size: 18px;
-        letter-spacing: 1px;
-    }
-
-    .separator {
-        height: 1px;
-        background-color: #ccc;
-        margin: 20px auto;
-        width: 90%;
-    }
 </style>
+</head>
 
-<div class="custom-container">
-    <div class="top-banner">
-        <h2>JOIN OUR FREE TELEGRAM</h2>
-        <p>SUBSCRIBE NOW</p>
-    </div>
+<body>
 
-    <div class="profile-section">
-        <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img">
-    </div>
+<div class="card">
 
-    <h1 class="main-heading">TRADE WITH KAROL</h1>
+<img src="https://i.ibb.co/kNhm2WH/cropped-circle-image-3.png" alt="profile">
 
-    <ul class="features-list">
-        <li><span class="check-icon">✅</span>Daily Market Insights (Educational Only)</li>
-        <li><span class="check-icon">✅</span>Learn Stock Market Basics & Concepts</li>
-        <li><span class="check-icon">✅</span>10+ Years of Market Learning Experience</li>
-        <li><span class="check-icon">✅</span>Daily Nifty & BankNifty Levels</li>
-        <li><span class="check-icon">✅</span>No Paid Tips - Purely Educational</li>
-    </ul>
+<h1>PANKAJ BHARDWAJ</h1>
 
-    <div class="loss-text">
-        <span class="check-icon">✅</span>ARE YOU FACING LOSSES OR WANT TO
-        <br><br>
-        <span class="check-icon">✅</span><span class="highlight-green">RECOVER YOUR LOSSES?</span>
-    </div>
-
-    <div class="btn-container">
-        <a href="https://t.me/YOUR_LINK_HERE" class="custom-cta-button" target="_blank">
-            JOIN OUR FREE TELEGRAM
-            <span class="sub-text">SUBSCRIBE NOW</span>
-        </a>
-    </div>
-
-    <div class="separator"></div>
-
-    <div class="footer-text">
-        !!HURRY UP!!
-    </div>
+<div class="sub">
+Learn trading concepts in simple way
 </div>
+
+<a class="btn" href="https://t.me/+0j8tUB449xtkOTJl" target="_blank">
+Join Free Telegram Community
+</a>
+
+<div class="points">
+📊 Learn Nifty & BankNifty basics<br>
+📘 Trading concepts & strategies<br>
+⚠️ Risk management education<br>
+📈 Market analysis understanding<br>
+</div>
+
+<div class="disclaimer">
+This content is for educational purposes only.<br>
+We do not provide investment advice or guaranteed returns.
+</div>
+
+<div class="footer">
+Not SEBI registered. Trading involves risk.
+</div>
+
+</div>
+
+</body>
+</html>
